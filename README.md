@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scriptsssa
 
 ##First install node modules
 ### `npm i` or `npm install`
