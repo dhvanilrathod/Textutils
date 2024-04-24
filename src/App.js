@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import About from "./componenets/About";
+import Navbar from "./componenets/Navbar";
+import TextForm from "./componenets/TextForm";
+import React, { useState } from 'react'
+
 
 function App() {
+  const [mode, setMode]= useState('light'); //whether dark mode is enable or not
+
+  const toggleMode = ()=>{
+    if(mode === 'light'){
+      setMode('dark');
+    }
+    else {
+      setMode('light');
+    }
+    
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} /> {/*if we use this manual props(proptypes) work [Navbar.js]*/}
+      {/* <Navbar  /> if we only use this so the default props works [Navbar.js]*/} 
+      <div className="container my-3">
+        <TextForm heading="Enter the text to analze below" />
+        {/* <About /> */}
+      </div>
+
+      
+
+      
+      
+
+    </>
   );
 }
 
